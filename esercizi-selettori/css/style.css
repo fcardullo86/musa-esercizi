@@ -1,0 +1,157 @@
+/* Stili di base per rendere la pagina leggibile (non sono parte degli esercizi) */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.5;
+  background-color: #f4f4f4;
+}
+
+h1, h2 {
+  margin-bottom: 0.5rem;
+}
+
+section {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+}
+
+.intro {
+  margin-bottom: 20px;
+}
+
+/* Esercizio 1 - Selettore di tag (p): applica uno stile a tutti i <p> della sezione */
+#ex1 p {
+   color: green;
+}
+
+/* Esercizio 2 - Selettore di classe (.box) - Obiettivo: applica uno stile solo agli elementi con classe "box" */
+.box {
+   font-weight: bold;
+   color:orange;
+}
+
+/* Esercizio 3 - Selettore di ID (#main-title): stile solo per il titolo con id="main-title" */
+#main-title {
+   font-size:56px;
+   color:greenyellow
+}
+
+/* Esercizio 4 - Selettore discendente (ul li): stile ai <li> figli della sottolista*/
+.lista-principale ul  li {
+   color: red;
+   font-style: italic;
+}
+
+/* Esercizio 5 - Figlio diretto (div > span): colora solo gli span figli diretti di un div */
+section#ex5 div > span { 
+   color: blue;
+}
+/* Esercizio 6 - Fratello adiacente (p + ul): stile alla prima ul dopo un p */
+section#ex6-7 p + ul {
+   font-weight: bold;
+}
+
+/* Esercizio 7 - Fratelli generici (p ~ ul): stile a tutte le ul dopo un p (assegna uno stile diverso da quello dell'esercizio 6) */
+section#ex6-7 p ~ ul {
+   color:red;
+}
+
+/* Esecizio 8 - :hover: cambia aspetto del bottone .btn-hover al passaggio del mouse */
+section#ex8 button.btn-hover:hover {
+   color:blue;
+   background-color: yellow;
+   font-size: bold;
+}
+
+/* Esercizio 9 - :focus: evidenzia l’input #focus-input quando è selezionato */
+section#ex9 input#focus-input:focus {
+   background-color: red;
+}
+/* Esercizio 10 - :first-child / :last-child: colora il primo e l’ultimo elemento di .lista-first-last */
+section#ex10 li:first-child,
+section#ex10 li:last-child {
+   color: blue;
+}
+
+/* Esercizio 11 - Selettore di attributo input[type="text"]: stile solo per l’input di tipo text */
+section#ex11 input[type="text"] {
+   background-color: aqua;
+}
+/* Esercizio 12 - :not(): sfondo grigio per tutte le .card tranne quella con .highlight */
+section#ex12 div:not(.highlight) {
+   color:gray;
+}  
+
+/* Esercizio 13 - ::before e ::after: aggiungi contenuto prima/dopo .label-title */
+section#ex13 h3::after {
+   content: "dopo";
+   background-color: yellow;
+}
+section#ex13 h3::before {
+   content: "prima";
+   background-color: yellow;
+}
+
+/* Esercizio 14 - :target: evidenzia #target-section quando è il target del link */
+section#ex14 div#target-section:target {
+   background-color: royalblue;
+   color:white;
+}
+
+/* Esercizio 15. Tag vs classe: Dare un colore al tag p e un altro colore a .testo-speciale*/
+section#ex15 p {
+   color:red;
+}
+section#ex15 .testo-speciale {
+   color:blue;
+}
+
+/* Esercizio 16 - ID vs classe vs tag: Dare colori diversi a: div, .colorato, #box-id*/
+section#ex16 div {
+   color: yellow;
+}
+section#ex16 .colorato {
+   color: blue;
+}
+section#ex16 #box-id {
+   color: green;
+}
+
+/* Esercizio 17 - Selettori combinati: Dare colori diversi a .nota, .nota.evidenziata*/
+section#ex17 .nota {
+   color:red;
+}
+section#ex17 .evidenziata {
+   color:green;
+}
+
+/* Esercizio 18 - Inline style: Dare colori diversi a h3 e #titolo-inline - Osservare chi vince*/
+section#ex18 h3 {
+   color: red;
+}
+section#ex18 #titolo-inline {
+   color:yellow;
+}
+/* Esercizio 19 - !important : Dare un colore a .important-test - Poi sovrascriverlo con un colore !important in un altro selettore più specifico*/
+section#ex19 .important-test {
+   color:red;
+}
+section#ex19 .important-test {
+   color:yellow !important;
+}
+
+/*Usando un selettore più specifico non ci sarebbe bidogno di usare !important 
+
+section#ex19 p.important-test { 
+   color:blue;
+}
+
+*/

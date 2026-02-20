@@ -1,0 +1,592 @@
+:root {
+    --grigio: rgb(127, 126, 125);
+    --grigio-chiaro: rgb(241 241 241);
+    --arancione: rgb(255 84 4);
+}
+/*Common Style*/
+body {
+    font-size: 16px;
+    box-sizing: border-box; 
+    font-family: "Noto Sans Display";
+}
+svg {
+    width:40px;
+    height: 40px;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+h2 {
+    font-size: 1.5em;
+    font-weight: 550;
+    padding: 60px 0 30px 0;
+}
+h3 {
+    font-size: 1em;
+    font-weight: 550;
+}
+p {
+    max-width: 700px;
+    margin:0 auto;
+}
+/*spaziature*/
+.padding-bottom {
+    padding-bottom: 60px;
+}
+/*text*/
+.dancing {
+    font-family: "Dancing Script";
+}
+.size {
+    font-size: 1.5rem;
+}
+.bold {
+    font-weight: 600;
+}
+.italic {
+    font-style: italic;
+}
+.textleft {
+    text-align: left;
+}
+.textright {
+    text-align: right;
+}
+/*color*/
+.orange {
+    color: var(--arancione)
+}
+.white {
+    color:white;
+}
+.gray {
+    color:var(--grigio)
+}
+.background-gray {
+    background-color: var(--grigio);
+}
+.background-lightgray {
+    background-color: var(--grigio-chiaro);
+}
+.background-orange {
+    background-color: var(--arancione);
+}
+.background-white {
+    background-color: white;
+}
+.background-darkgray {
+    background-color: rgb(68 68 68);
+}
+.background-verydarkgray {
+    background-color: rgb(62 62 62);
+}
+/*position*/
+.absolute{
+    position:absolute;
+}
+.relative {
+    position: relative;
+}
+.left {
+    left:0;
+}
+.right{
+    right:0;
+}
+/*Layout*/
+.container {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+.inline-block {
+    display: inline-block;
+}
+.col2 {
+    width:calc(100% / 2 + 0.2rem);
+    vertical-align: top;
+    display: inline-block;
+    margin-right: -0.4rem;
+}
+/*header*/
+header {
+    padding:25px 0;
+    position: sticky;
+    top:0;
+    background-color: white;
+    border-bottom:1px solid var(--grigio);
+    z-index: 1000;/*trucchetto per le svg*/
+}
+header svg {
+    width:15px;
+    height:15px;
+    fill: var(--arancione);
+}
+header a {
+    font-weight: 540;
+    color: var(--grigio);
+    padding: 20px;
+    
+}
+header a:hover {
+    background-color: var(--grigio);
+    color:var(--grigio-chiaro);
+    border-radius: 5px;
+}
+header section.col2 {
+    max-width: 20%;
+}
+/*section=heading*/
+#heading {
+    padding: 280px 0 0 0;
+    background-image: url(https://picsum.photos/1300/800);
+    width:100%;
+    height: 400px;
+    margin: 0 auto;
+    text-align: center;
+    position:relative;
+}
+#heading h1 {
+    font-size: 4em;
+    color:white;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 180px 0 40px 0;
+}
+#heading .button {
+    padding: 15px 35px;
+    border: 1px solid white;
+    display:inline-block;
+    margin-bottom: 80px;
+}
+#heading .button:hover {
+    background-color: white;
+}
+#heading .button:hover a{
+    color: black;
+}
+.overlay {
+    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left:0;
+}
+/*section about*/
+#about {
+    text-align: center;
+    width:100%;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+#about svg {
+    fill:var(--arancione);
+    padding: 0 15px
+}
+#about div{
+    padding-bottom: 30px;
+}
+#about div.inline-block {
+    max-width: 60%;
+    vertical-align: top;
+}
+#about h3 {
+    padding-bottom: 15px;
+}
+/*section features*/
+#features {
+    text-align: center;
+    width:100%;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+#features svg {
+    fill:var(--grigio);
+}
+#features div.inline-block {
+    max-width: 55%;
+    vertical-align: top;
+    padding-left:55px;
+}
+#features div{
+    padding-bottom: 30px;
+}
+/*section people*/
+#people {
+    text-align: center;
+    width:100%;
+    margin: 0 auto;
+    padding-top: 150px;
+    padding-bottom: 120px;
+}
+#people div {
+    max-width: 30%;
+    padding-right: 40px;
+}
+#people h2 {
+    padding-top: 20px;
+    max-width: 85%;
+}
+#points {
+    font-size: 5.5em;
+    margin-top: 0;
+}
+#people svg {
+    width: 110px;
+    height: 110px;
+    fill:var(--grigio-chiaro);
+}
+#virgola1 {
+    left:0;
+    top:0;
+}
+#virgola2 {
+    right:0;
+    bottom:0;
+}
+#people img {
+    border-radius: 50%;
+}
+/*section team*/
+#team {
+    text-align: center;
+    width:100%;
+    margin: 0 auto;
+    padding-bottom: 100px;
+}
+#team .inline-block {
+    margin: 0 10px;
+    background-color: white;
+}
+/*section skills*/
+#skills {
+    text-align: center;
+    width:100%;
+    margin: 0 auto;
+    padding-bottom: 160px;
+    position: relative;
+}
+
+#skills svg {
+    width:250px;
+    height:250px;
+    fill:var(--grigio-chiaro);
+    left: 230px;
+    top: 150px;    
+}
+#skills progress {
+    width: 70%;
+}
+#skills table {
+    width: 100%;
+    text-align: left;
+    font-weight: 500;
+}
+#skills tr {
+    padding: 10px 0;
+}
+#skills p {
+    padding-bottom: 80px;
+}
+#skills .col2>div {
+    max-width:80%; 
+}
+/*section price*/
+#price {
+    text-align: center;
+    width:100%;
+    margin: 0 auto;
+    padding-bottom: 80px;
+    background-color: var(--grigio-chiaro);
+}
+#price .inline-block {
+    margin: 0 10px;
+}
+#price .inline-block p {
+    padding: 8px 50px;
+}
+.border-bottom {
+    border-bottom:2px solid var(--grigio-chiaro);
+}
+#price p + h4 {
+    font-size: 4em;
+    color: white;
+    font-weight: 300;
+    padding: 15px 0 7px 0;
+}
+#price h4 + p {
+    padding-bottom: 20px;
+}
+#price h4>span {
+    font-size: 0.5em;
+}
+#price button {
+    color:white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    border:none;
+    font-size: 0.8rem;
+    margin-top: 30px;
+    margin-bottom: 35px;
+    border:1px solid transparent;
+}
+#price button:hover {
+    color:var(--grigio);
+    background-color: var(--grigio-chiaro);
+    border:1px solid var(--grigio);
+}
+#price .col3 p.font-size {
+    font-size: 0.9em;
+    color:var(--grigio)
+}
+/*section client*/
+#client {
+    text-align: center;
+    width:100%;
+    margin: 0 auto;
+    padding-bottom: 160px;
+}
+#client .inline-block {
+    vertical-align: middle;
+    padding: 0 10px;
+    color:var(--grigio);
+    fill:var(--grigio);
+    margin: 0 auto;
+}
+#client .containers {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+}
+/*form*/
+#form {
+    text-align: center;
+    width:100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-bottom: 160px;
+    background-color: var(--grigio-chiaro);
+}
+.container2 {
+    width: 100%;
+    max-width: 585px;
+    margin: 0 auto;
+    text-align: center;
+}
+#form .container2 p {
+    font-size: 0.8em;
+    padding-bottom: 5px;
+}
+#form div.col2>h2 {
+    padding-right: 24%;
+}
+#form h2 + p {
+    padding-right: 24%;
+    padding-bottom: 40px;
+}
+#form svg.col2 {
+    width: 25px;
+    height:25px;
+    padding-left: 15px;
+}
+.container2 .col2 {
+    padding-bottom: 30px;
+}
+#form form{
+    padding-top: 60px;
+}
+#form input, textarea {
+    width:60%;
+    padding: 18px 30px;
+    margin-bottom: 24px;
+    border-radius: 5px;
+    border:none;
+    font-family: "Montserrat";
+}
+#form button {
+    padding: 8px 30px;
+    border-radius: 5px;
+    color:white;
+    background-color: rgb(68 68 68);
+    border:none
+}
+#form button:hover {
+    color:rgb(68 68 68);
+    background-color: white;
+    font-weight: 600;
+    border: 1px solid rgb(68 68 68);
+}
+/*footer*/
+footer {
+    text-align: center;
+    width:100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    background-color: rgb(68 68 68);
+}
+footer h2 {
+    color:white;
+    font-weight: 700;
+    padding-bottom: 50px;
+}
+footer svg {
+    background-color: var(--grigio-chiaro);
+    fill:rgb(68 68 68);
+    margin: 0 2px;
+    border: 1px solid transparent;
+}
+footer svg:hover {
+    background-color: rgb(62 62 62);
+    fill:var(--grigio-chiaro);
+    border: 1px solid var(--grigio-chiaro);
+}
+footer p {
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+    font-size: 0.7rem;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+/*pagina about section creative*/
+#creative {
+    text-align: center;
+    width:100%;
+    margin: 0 auto;
+    padding-bottom:140px;
+}
+#creative p {
+    padding-bottom: 80px;
+    margin:0 auto;
+}
+#creative a, #creative li {
+    padding: 10px 10px;
+    margin-bottom: 10px;
+}
+#creative a:hover {
+    background-color: var(--arancione);
+    color:white;
+}
+/*section customer*/
+#customer {
+    text-align: center;
+    width:100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding-bottom:100px;
+    background-color: var(--grigio-chiaro);
+}
+#customer .inline-block {
+    padding: 0 100px;
+}
+section#customer > p {
+    font-size: 0.6rem;
+    margin: auto;
+    padding: 60px 0;
+}
+#customer h3 {
+    color:var(--arancione);
+    font-size: 2em;
+    padding-bottom: 15px;
+    font-weight: 600;
+}
+#customer svg {
+    fill: var(--grigio);
+    padding-bottom: 10px;
+    width:70px;
+    height:70px;
+}
+#customer h3 + p {
+    font-size: 0.7em;
+    font-weight: 500;
+}
+/*RESPONSIVE*/
+@media screen and (max-width: 1024px){
+    
+    p {
+    max-width: 500px;
+        
+}
+    #people div {
+    max-width: 35%;
+}
+#virgola1 {
+    left:-29px;
+}
+#skills svg {
+    left: 164px;
+    top: 115px;
+}
+}
+
+@media screen and (max-width: 768px){
+    p {
+    max-width: 450px;
+        
+}
+    #people div {
+    max-width: 35%;
+}
+#virgola1 {
+    left:-45px;
+}
+#virgola2 {
+    right:-38px;
+}
+#skills .col2.relative {
+    display: none;    
+}
+#skills .col2.skill {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 500px;
+}
+#skills p {
+    text-align: center;
+}
+#price .inline-block {
+        display: block;
+        max-width: 350px;
+        margin: 0 auto 30px auto;
+    }
+#client .containers {
+    text-align: center;
+}
+#creative .img .inline-block {
+    display: block;
+}
+#creative  img{
+    width: 400px;
+    height: 400px;
+}
+#customer .inline-block {
+    padding: 0px 56px;
+}
+}
+
+@media screen and (max-width: 480px){
+   
+   
+    /* .col2{
+        width: calc(100% + 0.2rem);
+    } */
+
+}
+/*
+
+
+
+
+
+
+}
+
+@media screen and (max-width: 320px){
+    .col{
+        width: calc(100% + 0.2rem);
+    }
+}
+*/
