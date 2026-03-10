@@ -26,8 +26,8 @@ for(let i=10; i>0; i-- ){
 // Usa un ciclo for per sommare tutti i numeri da 1 a 100
 // Stampa il risultato finale in console
 let somma = 0;
-for(i=1; i<101; i++){
-   somma = somma + i;   
+for(let i=1; i<101; i++){
+   somma += i;   
 }
 console.log(somma);
 // ==================
@@ -61,8 +61,8 @@ let prezzi = [12.50, 8.00, 15.75, 22.00, 9.99];
 // Usa un ciclo for per calcolare la somma totale di tutti i prezzi
 // Stampa il totale in console
 let sommaPrezzi=0;
-for(i=0;i<prezzi.length;i++){
-    sommaPrezzi = sommaPrezzi+prezzi[i];
+for(let i=0;i<prezzi.length;i++){
+    sommaPrezzi += prezzi[i];
 }
 console.log(sommaPrezzi)
 // ==================
@@ -74,7 +74,7 @@ let numeriOriginali = [5, 10, 15, 20, 25];
 // Usa un ciclo for per riempire "numeriDoppi" con il doppio di ogni numero di "numeriOriginali"
 // Stampa entrambi gli array in console
 let numeriDoppi=[];
-for(i=0;i<numeriOriginali.length;i++){
+for(let i=0;i<numeriOriginali.length;i++){
     numeriDoppi.push(numeriOriginali[i]*2)
 }
 console.log(numeriDoppi);
@@ -87,13 +87,15 @@ let nomi = ["Mario", "Lucia", "Paolo", "Anna", "Giorgio", "Francesca"];
 // Usa un ciclo for per cercare il nome e stampare la sua posizione (indice)
 // Se lo trovi, stampa "Trovato alla posizione X", altrimenti "Non trovato"
 let nomeDaCercare = "Paolo";
-for(i=0;i<nomi.length;i++){
-    if(nomi.includes("Paolo")){
-        console.log("Trovato alla posizione "+ nomi.indexOf(nomeDaCercare))
-    }else{
-        console.log("Non trovato")
+trovato=false;
+for(let i=0;i<nomi.length;i++){
+    if(nomi[i]===nomeDaCercare){//si può pensare a un confronto .toLowerCase per non avere problemi
+        console.log("Trovato alla posizione "+ i)
+        trovato=true;
+        break;
     }
 }
+
 // ==================
 // ESERCIZIO 9: CONTARE OCCORRENZE
 // ==================
@@ -102,10 +104,8 @@ let voti = [6, 7, 5, 8, 6, 9, 6, 7, 6, 10];
 // Usa un ciclo for per contare quante volte appare il numero 6
 // Stampa il risultato in console
 let count = 0;
-for(i=0;i<voti.length;i++){
-    if(voti[i] == 6){
-        count++
-    }
+for(let i=0;i<voti.length;i++){
+    if(voti[i] === 6) count++ //istruzione unica, niente graffe e unica riga
 }
 console.log(count)
 // ==================
@@ -118,7 +118,7 @@ let lettere = ["a", "b", "c", "d", "e"];
 // NON usare il metodo reverse() - fai l'operazione manualmente
 // Stampa entrambi gli array in console
 let lettereInverse = [];
-for(i=0;i<lettere.length;i++){
+for(let i=0;i<lettere.length;i++){
     lettereInverse.unshift(lettere[i])
 }
 console.log(lettereInverse);
@@ -131,12 +131,12 @@ let frase = "JavaScript è un linguaggio di programmazione";
 // Suggerimento: puoi usare charAt() o accedere ai caratteri come array
 // Stampa il numero di vocali in console
 let countV = 0;
-let tutteVocali = "AEIOUaeiou"
-for(i=0;i<frase.length;i++){
-    if(tutteVocali.includes(frase[i])){
+let vocali = "aeiouèéòù";
+for(let i=0;i<frase.length;i++){
+    if(vocali.includes(frase[i].toLowerCase())){
         countV++
     }
-}    
+}  
 console.log(countV)
 // ==================
 // ESERCIZIO 12: CREARE STRINGA DA ARRAY
@@ -153,19 +153,17 @@ for(i=0; i<parole.length; i++){
 }
 console.log(fraseFinale)
 // ==================
-// ESERCIZIO 13: FILTRARE STRINGHE LUNGHE
+// ESERCIZIO 13: FILTRARE STRINGHE LUNGHE  // logica filter
 // ==================
 // Usa questo array (NON modificarlo):
-let citta = ["Roma", "Milano", "Napoli", "Torino", "Palermo", "Genova", "Bologna"];
+let citta = ["Roma", "Milano", "Napoli", "Torino", "Palermo", "Genova", "Bologna"];  
 // Crea un array vuoto "cittaLunghe"
 // Usa un ciclo for per riempire "cittaLunghe" solo con le città che hanno più di 6 caratteri
 // Suggerimento: usa la proprietà length sulle stringhe
 // Stampa l'array "cittaLunghe" in console
 let cittaLunghe = [];
 for(i=0;i<citta.length;i++){
-    if(citta[i].length > 6){
-        cittaLunghe.push(citta[i])
-    }
+    if(citta[i].length > 6)cittaLunghe.push(citta[i])
 }
 console.log(cittaLunghe)
 // ==================
@@ -214,7 +212,6 @@ let numeriTutti = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 // Stampa l'array "numeriPari" in console
 let numeriPari = [];
 for(i=0;i<numeriTutti.length;i++){
-    if(numeriTutti[i]%2===0)
-    numeriPari.push(numeriTutti[i])
+    if(numeriTutti[i]%2===0) numeriPari.push(numeriTutti[i])
 }
 console.log(numeriPari)
