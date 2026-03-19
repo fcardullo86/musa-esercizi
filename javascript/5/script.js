@@ -126,8 +126,8 @@ console.log(studentiAggiornati);
 // Usa filter per creare un nuovo array "studentiIscritti" senza Sara
 // NON modificare l'array originale "studenti"
 // Stampa il nuovo array in console e verifica che abbia 5 elementi
-
-
+const studentiIscritti = studenti.filter(s=>s.id != 6);
+console.log(studentiIscritti);
 // ==================
 // ESERCIZIO 11 (DELETE) - filter: RIMUOVERE PER CONDIZIONE
 // ==================
@@ -135,8 +135,9 @@ console.log(studentiAggiornati);
 // Usa filter per creare un nuovo array "registroPromossi"
 // NON modificare l'array originale "studenti"
 // Stampa in console il nuovo array e il numero di studenti rimasti
-
-
+const registroPromossi = studenti.filter(s=>s.voto>=6);
+console.log(registroPromossi);
+console.log(`Gli studenti rimasti sono: ${registroPromossi.length}`)
 // ==================
 // ESERCIZIO 12 (PIPELINE) - Combinare più metodi
 // ==================
@@ -146,3 +147,8 @@ console.log(studentiAggiornati);
 //   3. Salva il risultato in "reportEccellenti"
 // Stampa "reportEccellenti" in console
 // Risultato atteso: array di stringhe con solo gli studenti con voto alto
+const reportEccellenti = studenti.filter(s=>s.voto >=7).map(s=> `${s.nome} ${s.cognome} (${s.voto})`);
+console.log(reportEccellenti);
+
+// const reportEccellenti = studenti.map(s=> `${s.nome} ${s.cognome} (${s.voto})`);
+// console.log(reportEccellenti)
