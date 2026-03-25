@@ -35,24 +35,27 @@
 // Usa querySelectorAll per selezionare tutti gli elementi con classe "nota"
 // Stampa in console la NodeList ottenuta e il suo numero di elementi
 // Usa forEach sulla NodeList per stampare in console il testo di ogni nota
-
-
+    const classNota = document.querySelectorAll('.nota');
+    console.log(classNota, classNota.length);
+    classNota.forEach(e=>console.log(e.innerText));
 // ==================
 // ESERCIZIO 4: getElementsByClassName - SELEZIONARE PER CLASSE
 // ==================
 // Usa getElementsByClassName per selezionare tutti gli elementi con classe "nota"
 // Stampa in console la HTMLCollection ottenuta
 // Poi stampa solo il primo elemento della collezione
-
-
+    const classNota2 = document.getElementsByClassName('nota');
+    console.log(classNota2);
+    console.log(classNota[0]);
 // ==================
 // ESERCIZIO 5 (innerText) - MODIFICARE IL TESTO
 // ==================
 // Seleziona l'elemento con id "testo-dinamico"
-// Cambia il suo testo in "Testo modificato con innerText!"
+// Cambia il suo testo in 
 // Stampa in console il nuovo valore di innerText
-
-
+    const testoDinamico = document.getElementById('testo-dinamico');
+    testoDinamico.innerText = "Testo modificato con innerText!"
+    console.log(testoDinamico.innerText)
 // ==================
 // ESERCIZIO 6 (innerHTML) - INSERIRE HTML DINAMICO
 // ==================
@@ -60,8 +63,9 @@
 // Sostituisci il suo contenuto con:
 //   <strong>Testo in grassetto</strong> e <em>testo in corsivo</em>
 // Stampa in console il nuovo contenuto
-
-
+    const boxHtml = document.getElementById('box-html');
+    boxHtml.innerHTML = "<strong>Testo in grassetto</strong> <em>testo in corsivo</em>";
+    console.log(boxHtml.innerText);
 // ==================
 // ESERCIZIO 7 (style) - MODIFICARE LO STILE INLINE
 // ==================
@@ -71,8 +75,11 @@
 //   - dimensione font: "20px"
 //   - sfondo: "lightyellow"
 // Stampa in console il valore di style.color dopo la modifica
-
-
+    const testoStile = document.getElementById('testo-stile');
+    testoStile.style.color = "blue";
+    testoStile.style.fontSize = "20px";
+    testoStile.style.backgroundColor = "lightyellow";
+    console.log(testoStile.style.color);
 // ==================
 // ESERCIZIO 8 (classList.add / classList.remove) - AGGIUNGERE E RIMUOVERE CLASSI
 // ==================
@@ -81,8 +88,11 @@
 // Stampa in console il className dell'elemento dopo l'aggiunta
 // Poi rimuovi la classe "evidenziato" con classList.remove
 // Stampa in console il className dopo la rimozione
-
-
+    const boxClassi = document.getElementById('box-classi');
+    boxClassi.classList.add('evidenziato');
+    console.log(boxClassi.className);
+    boxClassi.classList.remove('evidenziato');
+    console.log(boxClassi.className);
 // ==================
 // ESERCIZIO 9 (className) - SOSTITUIRE TUTTE LE CLASSI
 // ==================
@@ -91,16 +101,20 @@
 // Assegna alla proprietà className il valore "rosso grande"
 //   (sostituisce completamente le classi precedenti)
 // Stampa in console il nuovo className
-
-
+    const testoClassnome = document.getElementById('testo-classnome');
+    console.log(testoClassnome.className);
+    testoClassnome.className = "rosso grande";
+    console.log(testoClassnome.className);
 // ==================
 // ESERCIZIO 10 (addEventListener - click) - BOTTONE CHE SALUTA
 // ==================
 // Seleziona il bottone con id "btn-saluta"
 // Aggiungi un addEventListener per l'evento "click"
 // Quando l'utente clicca, cambia l'innerText del bottone in "Ciao! 👋"
-
-
+    const btn = document.getElementById('btn-saluta');
+    btn.addEventListener("click", function(){
+        btn.innerText = "Ciao!"
+    });
 // ==================
 // ESERCIZIO 11 (addEventListener - click) - CONTATORE DI CLIC
 // ==================
@@ -110,8 +124,13 @@
 // Aggiungi un addEventListener "click" al bottone:
 //   - incrementa "contatore" di 1
 //   - aggiorna l'innerText del paragrafo nel formato "Clic: X"
-
-
+    const btn2 = document.getElementById('btn-contatore');
+    const risultatoContatore = document.getElementById('risultato-contatore');
+    let contatore = 0;
+    btn2.addEventListener("click", function(){
+        contatore++;
+        risultatoContatore.innerText = contatore;
+    });
 // ==================
 // ESERCIZIO 12 (addEventListener - mouseover) - RILEVARE IL PASSAGGIO DEL MOUSE
 // ==================
@@ -124,3 +143,13 @@
 //   - ripristina il colore di sfondo del div a "#ddd"
 //   - aggiorna l'innerText del paragrafo in "Stato: fuori"
 // Non usare l'oggetto event nei callback
+    const boxHover = document.getElementById('box-hover');
+    const statoHover = document.getElementById('stato-hover');
+    boxHover.addEventListener("mouseover", function(){
+        boxHover.style.backgroundColor = "lightblue";
+        statoHover.innerText = "Stato: sopra";
+    });
+    boxHover.addEventListener("mouseout", function(){
+        boxHover.style.backgroundColor = "#ddd";
+        statoHover.innerText = "Stato: fuori";
+    });
