@@ -1,0 +1,16 @@
+h2 {
+    color:yellow;
+    font-size: 3rem;
+}
+
+thead, th{
+    background-color: yellow;
+    color: black
+}
+td {
+    background-color: white;
+    color:black;
+}
+table ,td{
+    border:none;
+}
